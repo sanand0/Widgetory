@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><title>Preview: {{ widget.name }}</title>
+<link rel="stylesheet" href="/a/widgets.css"></link>
+</head><body>
+
+<div class="headerbar blackbar">
+    <div class="container_12">
+        <div class="grid_12">
+            <a href="/"><img class="logo" alt="Widgetory" src="/a/logo.png"></a>
+            <div class="caption">
+                <p>Browse our gallery of widgets</p>
+                <p>Create your own widget from any data</p>
+                <p>Display any widget on your page or desktop</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container_12">
+    <div class="grid_12">
+        <iframe src="/widget/{{ widget.key.id }}/" width="{{ widget.width }}" height="{{ widget.height }}"></iframe>
+    </div>
+    <div class="grid_8">
+        Include this code in your website to display this widget.
+        <textarea>&lt;iframe src=&quot;http://widgetory.s-anand.net/widget/{{ widget.key.id }}/&quot; width=&quot;{{ widget.width }}&quot; height=&quot;{{ widget.height }}&quot;&gt;&lt;/iframe&gt;</textarea>
+        <textarea>&lt;a href=&quot;http://widgetory.s-anand.net/widget/{{ widget.key.id }}/&quot;&gt;&lt;/a&gt;&lt;script src=&quot;http://widgetory.s-anand.net/script/{{ widget.key.id }}/&quot;&gt;&lt;/script&gt;</textarea>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="grid_8">
+        <a class="button" href="/edit/{{ widget.key.id }}/"><span>Edit</span></a>
+    </div>
+</div>
+</body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><title>Widgetory</title>
+<link rel="stylesheet" href="/a/widgets.css">
+</head><body>
+
+<div class="headerbar blackbar">
+    <div class="container_12">
+        <div class="grid_12">
+            <a href="/"><img class="logo" alt="Widgetory" src="/a/logo.png"></a>
+            <div class="caption">
+                <p>Browse our gallery of widgets</p>
+                <p>Create your own widget from any data</p>
+                <p>Display any widget on your page or desktop</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container_12">
+    {% for widget in recent %}
+    <div class="thumbnail grid_2"><a href="/preview/{{ widget.key.id }}/"><div class="title">{{ widget.name }}</div>
+        <img src="{{ widget.image }}">
+    </a></div>
+    {% endfor %}
+    <div class="thumbnail grid_2"><a href="/create/">
+        <div class="title">Click on this button to create a </div>
+        <div><br><a class="button" href="/create/"><span>New widget</span></a></div>
+    </a></div>
+</div>
+</body></html>

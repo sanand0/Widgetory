@@ -1,0 +1,17 @@
+application:    helloworld-sanand
+version:    1
+runtime:    python
+api_version:    1
+
+handlers:
+- url: /favicon.ico
+  static_files: a/favicon.ico
+  upload: a/favicon.ico
+  expiration: "1d"
+  mime_type: image/x-icon
+
+- url: /a
+  static_dir: a
+
+- url: /.*
+  script: widgets.py

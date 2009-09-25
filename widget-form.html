@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><title>Edit | Widgetory</title>
+<link rel="stylesheet" href="/a/widgets.css"></link>
+</head><body>
+
+<div class="headerbar blackbar">
+    <div class="container_12">
+        <div class="grid_12">
+            <a href="/"><img class="logo" alt="Widgetory" src="/a/logo.png"></a>
+            <div class="caption">
+                <p>Browse our gallery of widgets</p>
+                <p>Create your own widget from any data</p>
+                <p>Display any widget on your page or desktop</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container_12">
+    <div class="grid_8">
+        <form action="" method="post">
+        <table id="edit">
+            <tr><th class="label">Widget name</th><td><input name="name" value="{{ widget.name }}"></td></tr>
+            <tr><th class="label">Data source</th><td><input name="url" value="{{ widget.url }}"></td></tr>
+            <tr><th class="label">Thumbnail</th><td><input name="image" value="{{ widget.image }}"></td></tr>
+            <tr><th class="label">Refresh every</th><td><input class="number" name="refresh" value="{{ widget.refresh }}"> hours</td></tr>
+            <tr><th class="label">Main tag</th><td><input name="loop" value="{{ widget.loop }}"></td></tr>
+            <tr><th class="label">Show up to</th><td><input class="number" name="count" value="{{ widget.count }}"> entries</td></tr>
+            <tr><th class="label">Header</th><td><textarea name="header">{{ widget.header }}</textarea></td></tr>
+            <tr><th class="label">Body</th><td><textarea name="body">{{ widget.body }}</textarea></td></tr>
+            <tr><th class="label">Footer</th><td><textarea name="footer">{{ widget.footer }}</textarea></td></tr>
+            <tr><th class="label">Size</th><td><input class="number" name="width" value="{{ widget.width }}">px x <input class="number" name="height" value="{{ widget.height }}">px</td></tr>
+        </table>
+        <span class="button"><button type="submit">Save</button></span>
+        </form>
+        <form action="/delete/{{ widget.key.id }}/" method="post"><span class="button"><button type="submit">Delete</button></span>
+        </form>
+    </div>
+</div>
+</body></html>
